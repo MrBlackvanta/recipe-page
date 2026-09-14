@@ -1,6 +1,7 @@
 import Footer from "@/components/layout/footer";
 import type { Metadata } from "next";
 import { Young_Serif, Outfit } from "next/font/google";
+import { SITE_URL } from "@/app/site";
 import "./globals.css";
 
 const youngSerif = Young_Serif({
@@ -18,9 +19,11 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Recipe Page",
+  metadataBase: new URL(SITE_URL),
+  title: "Simple Omelette Recipe",
   description:
-    "Frontend Mentor Recipe Page challenge built with Next.js and TypeScript.",
+    "An easy and quick omelette: beaten eggs cooked to perfection and filled with your choice of cheese, vegetables or meats, ready in about ten minutes.",
+  alternates: { canonical: "/" },
   icons: {
     icon: [{ url: "/favicon.ico" }, { url: "/icon.png", type: "image/png" }],
     apple: [{ url: "/apple-icon.png" }],
